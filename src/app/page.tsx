@@ -16,7 +16,7 @@ type Jadwal = {
 // PENGATURAN UTAMA
 // =============================================
 const API_URL = "https://script.google.com/macros/s/AKfycbwpkuTVeY7cg697mbxXM-qv6-fX8KYFdQkeRYSVtQ0Sl1aQs-k5kTSlJzY5MBQqEA66iQ/exec";
-const GDRIVE_FOLDER_ID = "1NKRgEruaIcHDB0XEqm5MarWXqlZivoWd"; 
+const GDRIVE_FOLDER_ID: string = "1NKRgEruaIcHDB0XEqm5MarWXqlZivoWd"; 
 const SECRET_PASSCODE = "Co-Ass24TheBest";
 // =============================================
 
