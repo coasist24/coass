@@ -67,7 +67,7 @@ export default function Home() {
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault();
-    if (passcodeInput.toUpperCase() === SECRET_PASSCODE) {
+    if (passcodeInput === SECRET_PASSCODE) {
       localStorage.setItem("appUnlocked", "true");
       setIsUnlocked(true);
       setPasscodeError(false);
@@ -167,7 +167,7 @@ export default function Home() {
               onChange={(e) => setPasscodeInput(e.target.value)}
               className={`w-full text-center tracking-widest font-bold py-3 px-4 rounded-xl border-2 outline-none transition-all mb-4 uppercase text-slate-900 dark:text-white dark:bg-slate-900 ${passcodeError ? "border-red-400 bg-red-50 text-red-600 dark:bg-red-900/10 dark:text-red-400 dark:border-red-500/50" : "border-slate-200 bg-slate-50 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 dark:border-slate-700 dark:focus:border-blue-500/50"}`}
             />
-            {passcodeError && <p className="text-xs text-red-500 dark:text-red-400 font-bold mb-4 animate-bounce">Kode salah cuy! Coba inget-inget lagi.</p>}
+            {passcodeError && <p className="text-xs text-red-500 dark:text-red-400 font-bold mb-4 animate-bounce">Kode salah!</p>}
             
             <button type="submit" className="w-full bg-slate-800 hover:bg-slate-900 dark:bg-blue-600 dark:hover:bg-blue-500 text-white py-3.5 rounded-xl font-bold transition-all flex items-center justify-center gap-2">
               <KeyRound size={18} /> Buka
