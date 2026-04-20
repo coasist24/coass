@@ -479,7 +479,7 @@ export default function Home() {
                         {groupName.includes("[SHIFTING]") ? <AlertCircle size={16} className="text-orange-500"/> : <CheckSquare size={16} className="text-blue-600 dark:text-blue-400" />}
                         {groupName}
                       </span>
-                      <span className="text-xs bg-slate-200 dark:bg-slate-800 px-2.5 py-1 rounded-full text-slate-600 dark:text-slate-400 font-bold">{groupedActiveStudents[groupName].length} Anak</span>
+                      <span className="text-xs bg-slate-200 dark:bg-slate-800 px-2.5 py-1 rounded-full text-slate-600 dark:text-slate-400 font-bold">{groupedActiveStudents[groupName].length} Praktikan</span>
                     </div>
                     
                     <div className="space-y-3">
@@ -583,7 +583,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex flex-col md:flex-row gap-3">
-                    <button onClick={generateWATemplate} disabled={!waData.asisten || activeStudents.length === 0} className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl font-bold transition-colors disabled:opacity-50 flex items-center justify-center gap-2"><Send size={16}/> Generate WhatsApp</button>
+                    <button onClick={generateWATemplate} disabled={!waData.asisten || activeStudents.length === 0} className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl font-bold transition-colors disabled:opacity-50 flex items-center justify-center gap-2"><Send size={16}/> Kirim ke WhatsApp</button>
                     <button onClick={() => {setScores({}); setActiveStudents([]); setSearchQuery("");}} className="p-3.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-xl text-slate-600 dark:text-slate-300 transition-colors flex items-center justify-center gap-2 font-semibold"><RotateCcw size={16}/> <span className="md:hidden">Reset</span></button>
                   </div>
                 </div>
@@ -631,12 +631,10 @@ export default function Home() {
               
               {highlightJadwalList.length > 0 ? (
                 viewMode === "me" ? (
-                  // ✅ JADWAL SAYA: Langsung jejer kanan-kiri
                   <div className="flex overflow-x-auto gap-3 pb-2 snap-x [&::-webkit-scrollbar]:hidden">
                     {highlightJadwalList.map(item => <ScheduleCard key={item["ID Unik"]} item={item} />)}
                   </div>
                 ) : (
-                  // ✅ GENERAL: Bungkus per shift
                   <div className="space-y-4">
                     {Object.keys(groupedHighlight).sort().map(shiftKey => {
                       const shiftItems = groupedHighlight[shiftKey];
@@ -694,7 +692,7 @@ export default function Home() {
               </div>
             )}
 
-            {/* ✅ TABS JADWAL: AKAN DATANG & SELESAI */}
+            {/* TABS JADWAL: AKAN DATANG & SELESAI */}
             <div className="mt-8">
               <div className="flex gap-2 mb-6">
                  <button onClick={() => setScheduleTab("upcoming")} className={`py-2 px-5 font-bold text-sm rounded-full transition-colors ${scheduleTab === 'upcoming' ? 'bg-slate-800 dark:bg-white text-white dark:text-slate-900' : 'bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800'}`}>Akan Datang</button>
